@@ -26,3 +26,5 @@ npm install
 ```
 npm start
 ```
+
+Ссылка на проект на GitPages: https://anast-pro.github.io/mesto-react/
