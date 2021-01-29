@@ -23,13 +23,18 @@ function Main(props) {
         <main className="content">
             <section className="profile">
                 <div className="profile__main">
-                    <div className="profile__edit-avatar"></div>
-                    <img
-                        onClick={props.onEditAvatar}
-                        className="profile__avatar"
-                        alt="avatar"
-                        src={userAvatar}
-                    />
+                    <div className="profile__edit-avatar">
+                        <img
+                            className="profile__avatar"
+                            alt="avatar"
+                            src={userAvatar}
+                        />
+                        <button
+                            className="profile__avatar-button button"
+                            type="button"
+                            onClick={props.onEditAvatar}
+                        ></button>
+                    </div>
 
                     <div className="profile__info-wrap">
                         <div className="profile__info">
