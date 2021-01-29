@@ -2,7 +2,7 @@ import closeButton from '../images/Close Icon.svg';
 
 function PopupWithForm(props) {
 
-        return (
+    return (
         <div className={`popup popup__${props.name} ${props.isOpen}`}>
             <div className="popup__container">
                 <button
@@ -22,9 +22,9 @@ function PopupWithForm(props) {
                 </form>
             </div>
         </div>
-        );
-        }
+    );
+}
 
 
-        export default PopupWithForm;
+export default PopupWithForm;
 

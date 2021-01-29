@@ -6,14 +6,15 @@ function Card(props) {
     function handleClick() {
         props.onCardClick(cardData.link);
     }
+
     return (
         <div className="element">
             <div
                 className="element__photo"
-                style={{ backgroundImage: `url(${cardData.link})` }}
+                style={{backgroundImage: `url(${cardData.link})`}}
                 onClick={handleClick}
             >
-                <button className="element__trash"> </button>
+                <button className="element__trash"></button>
             </div>
             <div className="element__info">
                 <h3 className="element__title">{cardData.name}</h3>
@@ -25,4 +26,5 @@ function Card(props) {
         </div>
     );
 }
+
 export default Card;

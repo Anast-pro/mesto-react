@@ -23,25 +23,27 @@ function Main(props) {
         <main className="content">
             <section className="profile">
                 <div className="profile__main">
-                <img
-                    onClick={props.onEditAvatar}
-                    className="profile__avatar"
-                    src={userAvatar}
-                />
+                    <div className="profile__edit-avatar"></div>
+                    <img
+                        onClick={props.onEditAvatar}
+                        className="profile__avatar"
+                        alt="avatar"
+                        src={userAvatar}
+                    />
 
-<div className="profile__info-wrap">
-                    <div className="profile__info">
-                        <h1 className="profile__name"> {userName} </h1>
-                        <p className="profile__aboutme"> {userDescription} </p>
+                    <div className="profile__info-wrap">
+                        <div className="profile__info">
+                            <h1 className="profile__name"> {userName} </h1>
+                            <p className="profile__aboutme"> {userDescription} </p>
+                        </div>
+
+                        <button
+                            onClick={props.onEditProfile}
+                            className="profile__edit-button"
+                            type="button"
+                        >
+                        </button>
                     </div>
-
-                    <button
-                        onClick={props.onEditProfile}
-                        className="profile__edit-button"
-                        type="button"
-                    >
-                    </button>
-</div>
 
                     <button
                         onClick={props.onAddPlace}
@@ -49,13 +51,13 @@ function Main(props) {
                     >
                     </button>
 
-               </div>
+                </div>
             </section>
 
             <section className="elements">
                 {cards.map((item, index) =>
                     <Card cardData={item} key={index} onCardClick={props.onCardClick}/>
-                    )}
+                )}
             </section>
         </main>
     );
