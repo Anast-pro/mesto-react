@@ -19,3 +19,11 @@
     opacity: 0.6;
     cursor: pointer;
 }
+
+.element__trash_visible {
+    display: block;
+}
+
+.element__trash_hidden {
+    display: none;
+}

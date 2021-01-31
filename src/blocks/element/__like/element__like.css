@@ -1,7 +1,7 @@
   .element__like {
       border: none;
       padding: 0;
-      background-image: url('../../../images/Like.svg');
+     /*background-image: url('../../../images/Like.svg');*/
       background-size: contain;
       box-sizing: border-box;
       background-color: rgba(0, 0, 0, 0);
@@ -10,8 +10,16 @@
       height: 18.13px;
       width: 21px;
   }
-  ¬
+
   .element__like:hover {
       cursor: pointer;
       opacity: 0.6;
+  }
+
+  .element__like_liked {
+      background-image: url('../../../images/Like_active.svg');
+  }
+
+  .element__like_unliked {
+      background-image: url('../../../images/Like.svg');
   }

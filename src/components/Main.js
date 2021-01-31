@@ -1,23 +1,10 @@
 import React from 'react';
-import api from "../utils/api";
 import Card from "./Card";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
 
 function Main(props) {
-    const [userName, setUserName] = React.useState();
-    const [userDescription, setUserDescription] = React.useState();
-    const [userAvatar, setUserAvatar] = React.useState();
-    const [cards, setCards] = React.useState([]);
 
-    React.useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getCards()])
-            .then(([user, cards]) => {
-                setUserName(user.name);
-                setUserDescription(user.about);
-                setUserAvatar(user.avatar);
-                setCards(cards.slice(0));
-            })
-            .catch((err) => console.log(err));
-    }, []);
+    const currentUser = React.useContext(CurrentUserContext);
 
     return (
         <main className="content">
@@ -27,7 +14,7 @@ function Main(props) {
                         <img
                             className="profile__avatar"
                             alt="avatar"
-                            src={userAvatar}
+                            src={currentUser.avatar}
                         />
                         <button
                             className="profile__avatar-button button"
@@ -38,8 +25,8 @@ function Main(props) {
 
                     <div className="profile__info-wrap">
                         <div className="profile__info">
-                            <h1 className="profile__name"> {userName} </h1>
-                            <p className="profile__aboutme"> {userDescription} </p>
+                            <h1 className="profile__name">{currentUser.name}</h1>
+                            <p className="profile__aboutme">{currentUser.about}</p>
                         </div>
 
                         <button
@@ -60,8 +47,13 @@ function Main(props) {
             </section>
 
             <section className="elements">
-                {cards.map((item, index) =>
-                    <Card cardData={item} key={index} onCardClick={props.onCardClick}/>
+                {props.cards.map((item, index) =>
+                    <Card cardData={item}
+                          key={index}
+                          onCardClick={props.onCardClick}
+                          onCardLike={props.onCardLike}
+                          onDeleteClick={props.onDeleteClick}
+                    />
                 )}
             </section>
         </main>
