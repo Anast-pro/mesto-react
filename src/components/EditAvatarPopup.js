@@ -28,6 +28,7 @@ function EditAvatarPopup(props) {
                     name="avatar"
                     className="popup__input popup__form-information popup__form-information_avatar"
                     ref={avatarRef}
+                    value={props.value}
                     required
                 />
                 <span id="avatar-error" className="error"> </span>

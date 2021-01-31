@@ -12,7 +12,7 @@ function ImagePopup(props) {
                     className="popup__close popup__close_fullscreen"
                     onClick={props.onClose}
                 />
-                <img className="popup__image" alt="" src={props.card}/>
+                <img className="popup__image" alt={props.card} src={props.card}/>
                 <h3 className='popup__title popup__title_image'>{props.title}</h3>
             </div>
         </div>

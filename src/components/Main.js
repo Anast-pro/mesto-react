@@ -47,13 +47,14 @@ function Main(props) {
             </section>
 
             <section className="elements">
-                {props.cards.map((item, index) =>
+                {props.cards.map((item, index) => (
                     <Card cardData={item}
                           key={index}
                           onCardClick={props.onCardClick}
                           onCardLike={props.onCardLike}
                           onDeleteClick={props.onDeleteClick}
                     />
+                    )
                 )}
             </section>
         </main>

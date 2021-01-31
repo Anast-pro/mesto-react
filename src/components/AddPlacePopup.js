@@ -18,6 +18,7 @@ function AddPlacePopup(props) {
         props.onAddPlace({name, link});
     }
 
+
     return (
         <PopupWithForm isOpen={props.isOpen ? "popup_opened" : ""}
                        onClose={props.onClose}
@@ -33,6 +34,7 @@ function AddPlacePopup(props) {
                     placeholder="Название"
                     name="placename"
                     className="popup__input popup__form-information popup__form-information_placename"
+                    value={props.name}
                     onChange={handleNameChange}
                     required
                 />
@@ -45,6 +47,7 @@ function AddPlacePopup(props) {
                     name="placeimage"
                     className="popup__input popup__form-information popup__form-information_placeimage"
                     placeholder="Ссылка на картинку"
+                    value={props.link}
                     onChange={handleLinkChange}
                     required
                 />
