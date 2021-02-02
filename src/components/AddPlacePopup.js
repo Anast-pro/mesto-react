@@ -15,7 +15,10 @@ function AddPlacePopup(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onAddPlace({name, link});
+        props.onAddPlace({
+            name: name,
+            link: link,
+        });
     }
 
 
@@ -34,7 +37,7 @@ function AddPlacePopup(props) {
                     placeholder="Название"
                     name="placename"
                     className="popup__input popup__form-information popup__form-information_placename"
-                    value={props.name}
+                    value={name}
                     onChange={handleNameChange}
                     required
                 />
@@ -47,7 +50,7 @@ function AddPlacePopup(props) {
                     name="placeimage"
                     className="popup__input popup__form-information popup__form-information_placeimage"
                     placeholder="Ссылка на картинку"
-                    value={props.link}
+                    value={link}
                     onChange={handleLinkChange}
                     required
                 />
@@ -64,3 +67,5 @@ function AddPlacePopup(props) {
 }
 
 export default AddPlacePopup;
+
+//спасибо за ревью) надеюсь, в этот раз я правильно поняла задачу

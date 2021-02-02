@@ -1,3 +1,4 @@
+
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
@@ -47,7 +48,6 @@ function EditProfilePopup(props) {
                     name="name"
                     className="popup__input popup__form-information popup__form-information_name"
                     onChange={handleNameChange}
-                    value={props.name}
                     required
                 />
                 <span id="name-error" className="error"></span>
@@ -62,7 +62,6 @@ function EditProfilePopup(props) {
                     name="aboutme"
                     className="popup__input popup__form-information popup__form-information_aboutme"
                     onChange={handleDescriptionChange}
-                    value={props.about}
                     required
                 />
                 <span id="aboutme-error" className="error"></span>
